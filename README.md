@@ -150,31 +150,6 @@ MeanFlowTSE/
     └── transforms.py        # STFT/iSTFT utilities
 ```
 
-## Alpha Scheduling
-
-The curriculum learning schedule uses a sigmoid function:
-
-```
-α(k) = 1 - σ(γ · (k - k_mid) / (k_e - k_s))
-```
-
-Where:
-- `k`: Current training iteration
-- `k_s`: Schedule start iteration
-- `k_e`: Schedule end iteration  
-- `k_mid = (k_s + k_e) / 2`: Midpoint
-- `γ`: Temperature parameter (default: 25.0)
-
-**Training Phases:**
-
-| Phase | Epochs | Alpha Value | Objective |
-|-------|--------|-------------|-----------|
-| 1 | 0-0 | α = 1.0 | Trajectory flow matching |
-| 2 | 0-2000 | 1.0 → 0.005 | Alpha-Flow transition |
-| 3 | 2000+ | α ≈ 0.005 | Consistency training |
-
-
-
 ## Citation
 
 If you use this code in your research, please cite:
