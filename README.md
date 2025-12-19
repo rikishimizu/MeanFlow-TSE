@@ -8,14 +8,60 @@ MeanFlowTSE combines AD-FlowTSE and MeanFlow/AlphaFlow training objectives for e
 
 ### Requirements
 
+Note that this is the setup that worked for the author but you might need to adjust it based on your hardware configurations.
 ```bash
-# Python 3.8+
-pip install torch torchvision torchaudio
-pip install pytorch-lightning
-pip install asteroid
-pip install einops
-pip install pystoi
-pip install pandas tqdm pyyaml
+# MeanFlowTSE Requirements
+# Python 3.9+
+
+# PyTorch and related (CUDA 11.8)
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.0.1
+torchvision==0.15.2
+torchaudio==2.0.2
+
+# Core scientific packages
+numpy==1.24.3
+scipy==1.10.1
+pandas==2.0.3
+matplotlib==3.7.2
+seaborn==0.12.2
+h5py==3.9.0
+tqdm
+
+# Audio processing
+librosa==0.10.0.post2
+soundfile==0.12.1
+pydub==0.25.1
+resampy==0.4.2
+
+# PyTorch Lightning
+pytorch-lightning==2.0.6
+tensorboard
+wandb
+
+# Asteroid (audio source separation toolkit)
+asteroid==0.6.0
+
+# Speech metrics
+pystoi==0.3.3
+
+# Model components
+einops==0.6.1
+timm==0.9.5
+
+# Configuration management
+omegaconf==2.3.0
+hydra-core==1.3.2
+pyyaml
+
+# Transformer models
+transformers==4.30.2
+accelerate==0.20.3
+
+# Additional metrics (optional)
+# Uncomment if you want to use DNSMOS and speaker similarity
+# speechmos
+# wespeakerruntime
 ```
 
 ### Dataset Preparation
