@@ -1,7 +1,5 @@
 # MeanFlow-TSE: One-Step Generative Target Speaker Extraction with Mean Flow
 
-Official implementation of **MeanFlowTSE**, a target speaker extraction system using flow matching with curriculum learning through alpha scheduling.
-
 ## Overview
 
 MeanFlowTSE combines AD-FlowTSE and MeanFlow/AlphaFlow training objectives for effective one-step target speaker extraction. Experiments on Libri2Mix dataset show that MeanFlowTSE achieve the SOTA performance in SI-SDR, PESQ, and ESTOI compared to the previous generative (diffusion / flow-matching) TSE models.
