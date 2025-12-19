@@ -109,6 +109,34 @@ The evaluation computes:
 
 Results are saved to CSV files with per-sample metrics and summary statistics.
 
+### Additional Metrics: DNSMOS and Speaker Similarity
+
+For more comprehensive evaluation, you can calculate additional perceptual quality metrics using the `calculate_dnsmos_wespeaker.py` script:
+
+#### What it does:
+
+1. **DNSMOS Scores**: Uses the SpeechMOS library to compute Deep Noise Suppression Mean Opinion Score (DNSMOS), which provides:
+   - `dnsmos_overall`: Overall perceptual quality
+   - `dnsmos_sig`: Speech signal quality (distortion level)
+   - `dnsmos_bak`: Background noise quality
+   - `dnsmos_p808`: ITU-T P.808 MOS prediction
+
+2. **Speaker Similarity**: Uses WeSpeaker to compute cosine similarity between speaker embeddings of:
+   - Generated estimation audio
+   - Ground truth source audio
+   
+   This measures how well the extracted speech preserves the target speaker's voice characteristics.
+
+#### Usage:
+
+```bash
+# Calculate DNSMOS and merge with existing metrics
+python calculate_dnsmos_wespeaker.py \
+    --results_dir test_results_meanflow/clean_ECAPAMLP_steps1 \
+    --existing_metrics test_results_meanflow/clean_ECAPAMLP_steps1/metrics_results.csv \
+    --output_csv test_results_meanflow/clean_ECAPAMLP_steps1/metrics_complete.csv
+```
+
 ## Model Checkpoints
 
 Checkpoints are saved in the configured directory:
