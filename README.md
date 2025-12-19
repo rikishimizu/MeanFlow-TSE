@@ -41,6 +41,17 @@ wandb
 
 # Asteroid (audio source separation toolkit)
 asteroid==0.6.0
+asteroid-filterbanks
+
+# Audio processing utilities
+julius
+torch-optimizer>=0.0.1a12,<0.2.0
+
+# Flow matching
+flow-matching
+
+# Utilities
+cached-property
 
 # Speech metrics
 pystoi==0.3.3
@@ -49,19 +60,26 @@ pystoi==0.3.3
 einops==0.6.1
 timm==0.9.5
 
+# Data processing
+openpyxl
+
 # Configuration management
 omegaconf==2.3.0
 hydra-core==1.3.2
 pyyaml
 
-# Transformer models
+# Optional: Transformer models
 transformers==4.30.2
 accelerate==0.20.3
 
 # Additional metrics (optional)
-# Uncomment if you want to use DNSMOS and speaker similarity
-# speechmos
-# wespeakerruntime
+# Note: Install these separately if needed for evaluation
+# speechmos  # For DNSMOS scores (optional, may have conflicts)
+# wespeakerruntime  # For speaker similarity (optional)
+#
+# To install DNSMOS and speaker similarity:
+#   pip install speechmos
+#   pip install wespeakerruntime
 ```
 
 ### Dataset Preparation
