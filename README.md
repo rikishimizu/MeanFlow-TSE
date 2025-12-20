@@ -10,6 +10,9 @@ MeanFlowTSE combines AD-FlowTSE and MeanFlow/AlphaFlow training objectives for e
 
 See **requirements.txt** for the software dependencies. Note that this is the setup that worked for the author but you might need to adjust it based on your hardware configurations.
 
+### Pretrained Models
+
+We provide pretrained checkpoints for MeanFlowTSE trained on Libri2Mix [Google Drive](https://drive.google.com/drive/folders/1pB5IMjjef3irWl9730F-ez_ztA0srmSW?usp=sharing) 
 
 ### Dataset Preparation
 
