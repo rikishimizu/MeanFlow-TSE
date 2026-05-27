@@ -293,7 +293,7 @@ class MeanFlowTSE:
         u_tr = model(x_t, t, r, enrollment=enrollment)
         
         # Ground truth velocity
-        v_true = (r_ - t_) * (source - background)
+        v_true = source - background
         
         # Compute loss
         error = u_tr - v_true
